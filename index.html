@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dart Arena X 🎯</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Dart Arena X 🎯</h1>
+
+<div id="setup" class="glass">
+  <h2>Spiel Setup</h2>
+
+  <label>Spieleranzahl:</label>
+  <select id="playerCount">
+    <option value="1">1</option>
+    <option value="2" selected>2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+  </select>
+
+  <label>Startpunkte:</label>
+  <select id="startPoints">
+    <option value="301">301</option>
+    <option value="501" selected>501</option>
+    <option value="701">701</option>
+  </select>
+
+  <label>Legs zum Sieg:</label>
+  <input type="number" id="legsToWin" value="3" min="1" max="20">
+
+  <br><br>
+
+  <label><input type="checkbox" id="botMode"> Gegen Bot spielen 🤖</label>
+
+  <div id="botSettings" style="display:none;">
+    <label>Bot Stärke:</label>
+    <select id="botDifficulty">
+      <option value="easy">Leicht</option>
+      <option value="medium" selected>Mittel</option>
+      <option value="hard">Schwer</option>
+    </select>
+  </div>
+
+  <div id="names"></div>
+
+  <button onclick="startGame()">Spiel starten</button>
+</div>
+
+<div id="game" class="glass" style="display:none;">
+  <h2>Aktiver Spieler: <span id="current"></span></h2>
+
+  <input id="scoreInput" type="number" placeholder="Turn Punkte">
+  <label><input type="checkbox" id="doubleOut" checked> Double-Out</label>
+
+  <br>
+  <button onclick="submitTurn()">Turn eintragen</button>
+  <button onclick="endGame()" class="danger">Spiel beenden</button>
+
+  <div id="players"></div>
+
+  <h3>Live Dashboard & Statistiken</h3>
+  <div id="dashboard"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
