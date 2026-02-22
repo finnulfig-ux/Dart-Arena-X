@@ -11,12 +11,7 @@ let legsToWin=3;
 let botActive=false;
 let botDifficulty="medium";
 
-const checkout={
-170:"T20 T20 Bull",167:"T20 T19 Bull",164:"T20 T18 Bull",
-161:"T20 T17 Bull",160:"T20 T20 D20",158:"T20 T20 D19",
-157:"T20 T19 D20",40:"D20",32:"D16",24:"D12",
-16:"D8",8:"D4",4:"D2",2:"D1"
-};
+const checkout={170:"T20 T20 Bull",167:"T20 T19 Bull",164:"T20 T18 Bull",161:"T20 T17 Bull",160:"T20 T20 D20",158:"T20 T20 D19",157:"T20 T19 D20",40:"D20",32:"D16",24:"D12",16:"D8",8:"D4",4:"D2",2:"D1"};
 
 document.getElementById("playerCount").addEventListener("change",updateNames);
 document.getElementById("botMode").addEventListener("change",function(){
@@ -77,7 +72,6 @@ function processTurn(player,score,doubleOut){
 
   if(player.points===0){
     player.legs++;
-    confetti();
     alert(`${player.name} gewinnt ein Leg 🎉`);
 
     if(player.legs>=legsToWin){ alert(`${player.name} gewinnt das Match 🏆`); endGame(); return; }
@@ -136,17 +130,6 @@ function animateBarGlow(){
     bar.classList.add('glow');
     setTimeout(()=>bar.classList.remove('glow'),300);
   });
-}
-
-function confetti(){
-  for(let i=0;i<40;i++){
-    const c=document.createElement("div");
-    c.style.position="fixed"; c.style.width="8px"; c.style.height="8px";
-    c.style.background=`hsl(${Math.random()*360},100%,50%)`;
-    c.style.left=Math.random()*100+"vw"; c.style.top="-10px"; c.style.borderRadius="50%";
-    document.body.appendChild(c);
-    let fall=setInterval(()=>{c.style.top=parseInt(c.style.top)+5+"px"; if(parseInt(c.style.top)>window.innerHeight){clearInterval(fall);c.remove();}},20);
-  }
 }
 
 function endGame(){ if(confirm("Spiel wirklich beenden?")) location.reload(); }
