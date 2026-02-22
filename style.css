@@ -15,7 +15,6 @@ body {
   100%{background-position:0% 50%;}
 }
 
-/* Überschrift */
 h1 {
   margin-top:20px;
   font-size:2.8rem;
@@ -26,7 +25,6 @@ h1 {
   color:transparent;
 }
 
-/* Glass Container */
 .glass {
   background: rgba(255,255,255,0.08);
   backdrop-filter: blur(18px);
@@ -37,7 +35,6 @@ h1 {
   box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-/* Inputs & Selects */
 input, select {
   padding: 10px;
   margin: 6px;
@@ -57,7 +54,6 @@ input::placeholder {
   color: #ddd;
 }
 
-/* Buttons */
 button {
   padding: 10px 20px;
   margin:10px;
@@ -71,10 +67,8 @@ button {
 }
 
 button:hover { transform:scale(1.08); box-shadow:0 0 20px #00c6ff; }
-
 button.danger { background: linear-gradient(45deg,#ff416c,#ff4b2b); }
 
-/* Spieler Karten */
 .player {
   background: rgba(255,255,255,0.1);
   margin:15px auto;
@@ -96,7 +90,6 @@ button.danger { background: linear-gradient(45deg,#ff416c,#ff4b2b); }
   100% {box-shadow:0 0 10px #00f5ff;}
 }
 
-/* Checkout */
 .checkout {
   color: #ffe600;
   font-weight:bold;
@@ -104,7 +97,6 @@ button.danger { background: linear-gradient(45deg,#ff416c,#ff4b2b); }
   margin-top:5px;
 }
 
-/* Dashboard */
 #dashboard {
   display:flex;
   flex-wrap:wrap;
@@ -139,6 +131,14 @@ button.danger { background: linear-gradient(45deg,#ff416c,#ff4b2b); }
 .green { background: linear-gradient(90deg,#00ff99,#00ccff); }
 .yellow { background: linear-gradient(90deg,#ffcc00,#ff8800); }
 .red { background: linear-gradient(90deg,#ff0000,#ff416c); }
+
+#footer {
+  margin-top:30px;
+  font-size:14px;
+  color:#aaa;
+  text-align:center;
+  opacity:0.8;
+}
 
 /* Responsive */
 @media(max-width:600px){
