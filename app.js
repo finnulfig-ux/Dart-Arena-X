@@ -1,3 +1,9 @@
+/*
+  Dart Arena X 🎯
+  Developer: Finn
+  Version: 1.0
+*/
+
 let players=[];
 let current=0;
 let startPoints=501;
